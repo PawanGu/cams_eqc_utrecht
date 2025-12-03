@@ -2,7 +2,7 @@
 
 Small demo project comparing **CAMS EAC4 PM2.5** with **OpenAQ** observations
 from Utrecht (Kardinaal de Jongweg). The workflow mimics elements of the
-CAMS Evaluation & Quality Control (EQC) activities carried out at KNMI.
+CAMS Evaluation & Quality Control (EQC) activities.
 
 ## Workflow
 
@@ -23,27 +23,13 @@ Key result for 2016-01-29 to 2016-02-27:
 
 These values and the plots are consistent with typical CAMS vs urban PM2.5
 behaviour: CAMS is smoother and tends to overestimate in some winter episodes.
-
 ## Structure
 
-- `notebooks/01_cams_openaq_pm25_utrecht.ipynb` — main analysis
-- `scripts/` — optional script version (download, process, plot)
+- `scripts/` — self-contained Python scripts for the full workflow  
+  (`download_openaq.py` → `download_cams.py` → `process_merge.py` → `plot_pm25.py`).
+  Running them in this order downloads the data, processes/merges CAMS and OpenAQ,
+  and produces the validation metrics and figures.
+
 - `data/` — input/output data (NetCDF and CSV; not tracked in git)
-- `figs/` — generated figures
 
-This repo was prepared in the context of an application for a postdoctoral
-position in atmospheric composition at **KNMI**.
-
-cams_eqc_utrecht/
-│
-├── README.md
-├── environment.yml
-│
-├── scripts/
-│   ├── download_openaq.py
-│   ├── download_cams.py
-│   ├── process_merge.py
-│   └── plot_pm25.py
-│
-├── data/   
-└── figs/   
+- `figs/` — generated figures (time-series and scatter plots)
