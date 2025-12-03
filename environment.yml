@@ -1,0 +1,13 @@
+name: cams_eqc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - xarray
+  - netcdf4
+  - matplotlib
+  - requests
+  - python-dateutil
+  - cdsapi
